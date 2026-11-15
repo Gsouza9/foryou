@@ -1,0 +1,1085 @@
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+:root {
+  --pink: #d98da7;
+  --dark-pink: #a95d79;
+  --soft-pink: #f9e6ec;
+  --cream: #fff8fa;
+  --brown: #795246;
+  --text: #614d50;
+  --muted: #a38b91;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(ellipse at 50% 35%, #fff 0%, transparent 65%),
+    var(--cream);
+  color: var(--text);
+  font-family: "Nunito", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+
+/* ========================================
+   TELA DE ABERTURA
+======================================== */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #fff8fa;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+.intro.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-content {
+  width: min(100%, 480px);
+  text-align: center;
+  animation: introRise 1.2s ease both;
+}
+
+.intro-flower {
+  display: block;
+  margin-bottom: 24px;
+  color: var(--pink);
+  font-size: 42px;
+  animation: flowerTurn 8s linear infinite;
+}
+
+.intro-small,
+.eyebrow {
+  color: var(--dark-pink);
+  font-size: 10px;
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+
+.intro h1 {
+  margin-top: 16px;
+  font: 500 clamp(42px, 8vw, 65px)/.98 "Cormorant Garamond", serif;
+  color: #76535d;
+}
+
+.intro-description {
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.loading-line {
+  width: 145px;
+  height: 2px;
+  margin: 30px auto 18px;
+  overflow: hidden;
+  background: #f0dce3;
+}
+
+.loading-line span {
+  display: block;
+  width: 45%;
+  height: 100%;
+  background: var(--pink);
+  animation: loading 3.5s ease-in-out infinite;
+}
+
+.skip-intro {
+  border: 0;
+  background: none;
+  color: #a98591;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.intro-petals {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 20%, #f6d8e2 0 3px, transparent 4px),
+    radial-gradient(ellipse at 85% 70%, #f6d8e2 0 3px, transparent 4px),
+    radial-gradient(ellipse at 80% 18%, #f6d8e2 0 2px, transparent 3px);
+  opacity: .7;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+======================================== */
+
+.main-site {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.3s ease;
+}
+
+.main-site.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 28px 15px 10px;
+  color: #a9828e;
+  font: italic 18px "Cormorant Garamond", serif;
+}
+
+.header-flower {
+  color: #d99ab0;
+  font-size: 17px;
+}
+
+.hero {
+  width: min(100% - 32px, 1100px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-heading {
+  padding-top: 44px;
+}
+
+.hero-heading h1 {
+  margin-top: 18px;
+  color: #76535d;
+  font: 500 clamp(42px, 6vw, 68px)/.95 "Cormorant Garamond", serif;
+}
+
+.hero-heading h1 em {
+  color: #c77f9b;
+  font-weight: 400;
+}
+
+.hero-subtitle {
+  margin-top: 18px;
+  color: #a58b92;
+  font-size: 13px;
+}
+
+
+/* ========================================
+   ÁRVORE
+======================================== */
+
+.tree-stage {
+  position: relative;
+  width: min(100%, 850px);
+  aspect-ratio: 9 / 10;
+  margin: 10px auto 0;
+  isolation: isolate;
+}
+
+.sakura-tree {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(0 3px 5px rgba(180, 112, 137, 0.08));
+}
+
+.tree-roots,
+.tree-trunk,
+.tree-branches {
+  transform-origin: 50% 85%;
+  animation: treeGrow 2.3s cubic-bezier(.2,.75,.25,1) both;
+}
+
+.tree-roots {
+  animation-delay: .15s;
+}
+
+.tree-trunk {
+  animation-delay: .5s;
+}
+
+.tree-branches {
+  animation-delay: .9s;
+}
+
+.blossom-clusters {
+  transform-origin: 50% 35%;
+  animation: blossomsAppear 2s ease 1.5s both;
+}
+
+.tree-ground {
+  position: absolute;
+  bottom: 10.5%;
+  left: 17%;
+  width: 66%;
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, #c99ba3, transparent);
+  opacity: .45;
+}
+
+
+/* ========================================
+   CARTINHAS PENDURADAS
+======================================== */
+
+.hanging-card {
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% 0;
+  animation:
+    cardAppear .9s ease both,
+    cardSwing 4.5s ease-in-out infinite;
+}
+
+/* Fio que conecta o galho à cartinha */
+
+.string {
+  position: relative;
+  display: block;
+  width: 2px;
+  height: 48px;
+  margin-bottom: -1px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    #a98279,
+    #d5b2a8,
+    #a98279
+  );
+  opacity: .95;
+  box-shadow: 0 0 2px rgba(100, 65, 60, .2);
+}
+
+.string::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #a98279;
+  border-radius: 50%;
+  background: #f6dce4;
+  transform: translateX(-50%);
+}
+
+.paper-card {
+  position: relative;
+  display: flex;
+  min-width: 112px;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 14px 11px;
+  border: 1px solid #e8cbd3;
+  border-radius: 3px;
+  background: linear-gradient(145deg, #fffdf9, #fff0f4);
+  box-shadow: 2px 5px 12px #815e5e20;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 1px solid #f0dce1;
+  pointer-events: none;
+}
+
+.paper-card:hover {
+  transform: translateY(-5px) rotate(-2deg);
+  box-shadow: 3px 9px 18px #815e5e30;
+}
+
+.card-icon {
+  color: #c87996;
+  font: 25px "Cormorant Garamond", serif;
+}
+
+.card-label {
+  color: #926b78;
+  font: 500 13px "Cormorant Garamond", serif;
+  white-space: nowrap;
+}
+
+/* Posições das cartinhas no desktop */
+
+.card-message {
+  top: 29%;
+  left: 15%;
+  animation-delay: 1.6s, 0s;
+}
+
+.card-letter {
+  top: 21%;
+  right: 15%;
+  animation-delay: 1.8s, .7s;
+}
+
+.card-music {
+  top: 47%;
+  right: 10%;
+  animation-delay: 2s, 1.1s;
+}
+
+.card-gallery {
+  top: 43%;
+  left: 10%;
+  animation-delay: 2.2s, .4s;
+}
+
+.tree-hint {
+  margin: -5px auto 35px;
+  color: #a98b94;
+  font: italic 16px "Cormorant Garamond", serif;
+}
+
+.tree-hint span {
+  color: #d78eaa;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 25px 15px 45px;
+  color: #b3979f;
+  font: italic 15px "Cormorant Garamond", serif;
+}
+
+.footer-heart {
+  color: #d28aa4;
+  font-size: 19px;
+}
+
+
+/* ========================================
+   PÉTALAS
+======================================== */
+
+.petals {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.petal {
+  position: absolute;
+  top: -30px;
+  width: 11px;
+  height: 15px;
+  border-radius: 90% 10% 90% 10%;
+  background: linear-gradient(135deg, #ffe8ef, #e9a4bb);
+  opacity: .65;
+  animation: petalFall linear forwards;
+}
+
+
+/* ========================================
+   JANELAS DE CONTEÚDO
+======================================== */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #49343b75;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  position: relative;
+  width: min(100%, 490px);
+  max-height: min(85vh, 720px);
+  overflow-y: auto;
+  padding: 42px 34px 35px;
+  border: 1px solid #f1d8e0;
+  border-radius: 8px;
+  background: #fffaf9;
+  box-shadow: 0 20px 70px #2e1d2633;
+  text-align: center;
+  transform: translateY(20px) scale(.97);
+  transition: transform .4s ease;
+}
+
+.modal-overlay.open .modal {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 17px;
+  border: 0;
+  background: transparent;
+  color: #a9818c;
+  font-size: 29px;
+  cursor: pointer;
+}
+
+.modal-decoration {
+  display: block;
+  margin-bottom: 14px;
+  color: #d78ca7;
+  font-size: 27px;
+}
+
+.modal h2 {
+  margin-bottom: 17px;
+  color: #805a67;
+  font: 500 37px/1 "Cormorant Garamond", serif;
+}
+
+.modal p {
+  color: #8c747c;
+  font: 16px/1.8 "Cormorant Garamond", serif;
+}
+
+.modal .letter-text {
+  white-space: pre-line;
+  text-align: left;
+}
+
+
+/* ========================================
+   PLAYER / MÚSICA
+======================================== */
+
+.music-player {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  padding: 10px 0;
+}
+
+.music-note {
+  color: #d38ca6;
+  font-size: 40px;
+}
+
+.spotify-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  margin: 15px auto;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f6b8cb, #e987a9, #bd547d);
+  box-shadow: 0 8px 25px rgba(189, 84, 125, 0.2);
+}
+
+.spotify-cover .music-note {
+  color: white;
+  font-size: 42px;
+}
+
+.music-player h3 {
+  margin: 5px 0 0;
+  color: #a84f72;
+  font: 600 23px "Cormorant Garamond", serif;
+}
+
+.music-artist {
+  margin-top: -10px;
+  color: #9a7583;
+}
+
+.spotify-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 18px auto;
+  padding: 13px 25px;
+  border: none;
+  border-radius: 30px;
+  background: #1db954;
+  color: #fff;
+  text-decoration: none;
+  font: 600 14px "Nunito", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(29, 185, 84, .15);
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.spotify-button:hover {
+  background: #169c46;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(29, 185, 84, .25);
+}
+
+.spotify-button:active {
+  transform: scale(.97);
+}
+
+.spotify-button:focus-visible {
+  outline: 3px solid #a84f72;
+  outline-offset: 4px;
+}
+
+.music-player small {
+  display: block;
+  color: #ad8795;
+  font: italic 13px "Cormorant Garamond", serif;
+  margin-top: 5px;
+}
+
+
+/* ========================================
+   GALERIA DE FOTOS
+======================================== */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.gallery figure {
+  overflow: hidden;
+  border: 1px solid #efdce1;
+  padding: 6px;
+  background: white;
+}
+
+.gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform .3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+.gallery figcaption {
+  padding: 7px 3px 3px;
+  color: #997985;
+  font: italic 14px "Cormorant Garamond", serif;
+}
+
+
+/* ========================================
+   VÍDEO DE MEMÓRIA
+======================================== */
+
+.memory-video {
+  width: 100%;
+  max-width: 260px;
+  margin: 28px auto 0;
+  text-align: center;
+}
+
+.video-heading {
+  margin-bottom: 14px;
+  color: #805a67;
+  font: 500 21px "Cormorant Garamond", serif;
+}
+
+.memory-video-player {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  border: 5px solid #fff;
+  border-radius: 12px;
+  background: #000;
+  box-shadow: 0 5px 20px rgba(120, 75, 90, .15);
+}
+
+.video-caption {
+  margin-top: 12px;
+  color: #a58b92;
+  font: italic 14px "Cormorant Garamond", serif;
+}
+
+
+/* ========================================
+   VISUALIZADOR DE FOTOS
+======================================== */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(30, 19, 24, .94);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox img {
+  display: block;
+  max-width: min(90vw, 850px);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 5px;
+  box-shadow: 0 10px 45px #0005;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  z-index: 2;
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.lightbox-close {
+  top: 20px;
+  right: 25px;
+  font-size: 38px;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  font-size: 42px;
+  transform: translateY(-50%);
+  padding: 12px;
+}
+
+.lightbox-prev {
+  left: 15px;
+}
+
+.lightbox-next {
+  right: 15px;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: .7;
+}
+
+.lightbox-counter {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+  font: 14px "Nunito", sans-serif;
+}
+
+
+/* ========================================
+   ANIMAÇÕES
+======================================== */
+
+@keyframes introRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flowerTurn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: translateX(-110%);
+  }
+
+  100% {
+    transform: translateX(240%);
+  }
+}
+
+@keyframes treeGrow {
+  from {
+    opacity: 0;
+    transform: scaleY(.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes blossomsAppear {
+  from {
+    opacity: 0;
+    transform: scale(.75);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cardSwing {
+  0%, 100% {
+    rotate: 0deg;
+  }
+
+  25% {
+    rotate: 2deg;
+  }
+
+  75% {
+    rotate: -2deg;
+  }
+}
+
+@keyframes petalFall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate3d(35px, 50vh, 0) rotate(220deg);
+  }
+
+  100% {
+    transform: translate3d(-25px, 110vh, 0) rotate(500deg);
+  }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (min-width: 600px) and (max-width: 950px) {
+
+  .hero {
+    width: min(100% - 36px, 800px);
+  }
+
+  .tree-stage {
+    width: min(100%, 720px);
+  }
+
+  .paper-card {
+    min-width: 105px;
+    padding: 10px 12px;
+  }
+
+  .card-message {
+    left: 10%;
+  }
+
+  .card-letter {
+    right: 10%;
+  }
+
+  .card-gallery {
+    left: 6%;
+  }
+
+  .card-music {
+    right: 6%;
+  }
+
+  .string {
+    height: 42px;
+  }
+}
+
+
+/* ========================================
+   CELULAR
+======================================== */
+
+@media (max-width: 599px) {
+
+  .site-header {
+    padding-top: 20px;
+  }
+
+  .hero-heading {
+    padding-top: 34px;
+  }
+
+  .hero-heading h1 {
+    font-size: clamp(39px, 11vw, 52px);
+  }
+
+  .hero-subtitle {
+    max-width: 290px;
+    margin: 15px auto 0;
+    font-size: 12px;
+  }
+
+  .tree-stage {
+    width: 100%;
+    aspect-ratio: 9 / 11;
+    margin-top: 14px;
+  }
+
+  .sakura-tree {
+    width: 100%;
+    height: 100%;
+  }
+
+  .paper-card {
+    min-width: 82px;
+    padding: 8px 7px;
+    gap: 2px;
+  }
+
+  .card-icon {
+    font-size: 20px;
+  }
+
+  .card-label {
+    font-size: 11px;
+  }
+
+  /*
+     Fios menores para manter a impressão
+     de que as cartinhas estão penduradas
+     nos galhos da árvore.
+  */
+
+  .string {
+    height: 27px;
+  }
+
+  /*
+     Distribuição alternada:
+     cada cartinha fica em uma altura
+     diferente e em um lado da árvore.
+  */
+
+  .card-message {
+    top: 19%;
+    left: 3%;
+  }
+
+  .card-letter {
+    top: 34%;
+    right: 3%;
+  }
+
+  .card-gallery {
+    top: 51%;
+    left: 3%;
+  }
+
+  .card-music {
+    top: 66%;
+    right: 3%;
+  }
+
+  .tree-hint {
+    margin: 0 auto 25px;
+    font-size: 14px;
+  }
+
+  .modal {
+    padding: 40px 22px 28px;
+  }
+
+  .modal h2 {
+    font-size: 32px;
+  }
+
+  .modal p {
+    font-size: 15px;
+  }
+
+  .spotify-button {
+    width: min(100%, 250px);
+    padding: 13px 18px;
+  }
+
+  .gallery {
+    gap: 8px;
+  }
+
+  .gallery figcaption {
+    font-size: 12px;
+  }
+
+  .memory-video {
+    max-width: 220px;
+    margin-top: 24px;
+  }
+
+  .video-heading {
+    font-size: 19px;
+  }
+
+  .video-caption {
+    font-size: 13px;
+  }
+
+  .lightbox-prev {
+    left: 2px;
+  }
+
+  .lightbox-next {
+    right: 2px;
+  }
+}
+
+
+/* ========================================
+   TELAS MUITO ESTREITAS
+======================================== */
+
+@media (max-width: 360px) {
+
+  .tree-stage {
+    width: 106%;
+    margin-left: -3%;
+  }
+
+  .paper-card {
+    min-width: 70px;
+    padding: 7px 4px;
+  }
+
+  .card-label {
+    font-size: 10px;
+  }
+
+  .card-message,
+  .card-gallery {
+    left: 1%;
+  }
+
+  .card-letter,
+  .card-music {
+    right: 1%;
+  }
+
+  .card-message {
+    top: 18%;
+  }
+
+  .card-letter {
+    top: 34%;
+  }
+
+  .card-gallery {
+    top: 51%;
+  }
+
+  .card-music {
+    top: 66%;
+  }
+
+  .string {
+    height: 23px;
+  }
+
+  .modal {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .memory-video {
+    max-width: 190px;
+  }
+}
+
+
+/* ========================================
+   ACESSIBILIDADE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+}
