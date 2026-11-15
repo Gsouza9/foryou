@@ -96,7 +96,7 @@ consiga esquecer um pouquinho dos problemas, dos dias difíceis, da correria e d
 que a vida traz.
 
 Você sempre me faz sorrir com uma mensagem engraçada, uma figurinha
-ridícula de boa KKKKASJAKJ e com esse seu jeito perfeito que só vc 
+ridícula de boa KKKKASJAKJ e com esse seu jeito perfeito que só você 
 consegue ter. 
 
 Quero que você saiba q sempre vou estar com você, seja pra te arrancar um sorriso,
