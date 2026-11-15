@@ -1,15 +1,21 @@
+
 /* ========================================
    CONFIGURAÇÕES GERAIS
 ======================================== */
 
 :root {
-  --pink: #d98da7;
-  --dark-pink: #a95d79;
-  --soft-pink: #f9e6ec;
-  --cream: #fff8fa;
-  --brown: #795246;
-  --text: #614d50;
-  --muted: #a38b91;
+  --pink: #c85b72;
+  --dark-pink: #922d43;
+  --soft-pink: #f7e1e5;
+  --cream: #fff8f7;
+  --brown: #70434a;
+  --text: #594247;
+  --muted: #a18489;
+
+  --red: #bd354f;
+  --wine: #85263d;
+  --soft-red: #f5dce1;
+  --light-red: #fff0f2;
 }
 
 * {
@@ -48,7 +54,7 @@ button {
   display: grid;
   place-items: center;
   padding: 24px;
-  background: #fff8fa;
+  background: #fff8f7;
   transition: opacity 1s ease, visibility 1s ease;
 }
 
@@ -67,7 +73,7 @@ button {
 .intro-flower {
   display: block;
   margin-bottom: 24px;
-  color: var(--pink);
+  color: var(--red);
   font-size: 42px;
   animation: flowerTurn 8s linear infinite;
 }
@@ -83,7 +89,7 @@ button {
 .intro h1 {
   margin-top: 16px;
   font: 500 clamp(42px, 8vw, 65px)/.98 "Cormorant Garamond", serif;
-  color: #76535d;
+  color: #703b48;
 }
 
 .intro-description {
@@ -97,21 +103,21 @@ button {
   height: 2px;
   margin: 30px auto 18px;
   overflow: hidden;
-  background: #f0dce3;
+  background: #efd5dc;
 }
 
 .loading-line span {
   display: block;
   width: 45%;
   height: 100%;
-  background: var(--pink);
+  background: var(--red);
   animation: loading 3.5s ease-in-out infinite;
 }
 
 .skip-intro {
   border: 0;
   background: none;
-  color: #a98591;
+  color: #a16b78;
   font-size: 12px;
   cursor: pointer;
   padding: 10px;
@@ -122,9 +128,9 @@ button {
   inset: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 15% 20%, #f6d8e2 0 3px, transparent 4px),
-    radial-gradient(ellipse at 85% 70%, #f6d8e2 0 3px, transparent 4px),
-    radial-gradient(ellipse at 80% 18%, #f6d8e2 0 2px, transparent 3px);
+    radial-gradient(ellipse at 15% 20%, #f2cbd4 0 3px, transparent 4px),
+    radial-gradient(ellipse at 85% 70%, #f2cbd4 0 3px, transparent 4px),
+    radial-gradient(ellipse at 80% 18%, #f2cbd4 0 2px, transparent 3px);
   opacity: .7;
 }
 
@@ -150,12 +156,12 @@ button {
   align-items: center;
   gap: 15px;
   padding: 28px 15px 10px;
-  color: #a9828e;
+  color: #956b75;
   font: italic 18px "Cormorant Garamond", serif;
 }
 
 .header-flower {
-  color: #d99ab0;
+  color: #c85b72;
   font-size: 17px;
 }
 
@@ -171,18 +177,18 @@ button {
 
 .hero-heading h1 {
   margin-top: 18px;
-  color: #76535d;
+  color: #703b48;
   font: 500 clamp(42px, 6vw, 68px)/.95 "Cormorant Garamond", serif;
 }
 
 .hero-heading h1 em {
-  color: #c77f9b;
+  color: #bd354f;
   font-weight: 400;
 }
 
 .hero-subtitle {
   margin-top: 18px;
-  color: #a58b92;
+  color: #a18489;
   font-size: 13px;
 }
 
@@ -205,7 +211,7 @@ button {
   width: 100%;
   height: 100%;
   overflow: visible;
-  filter: drop-shadow(0 3px 5px rgba(180, 112, 137, 0.08));
+  filter: drop-shadow(0 3px 5px rgba(180, 75, 105, 0.08));
 }
 
 .tree-roots,
@@ -239,7 +245,7 @@ button {
   width: 66%;
   height: 2px;
   border-radius: 50%;
-  background: linear-gradient(90deg, transparent, #c99ba3, transparent);
+  background: linear-gradient(90deg, transparent, #c58b96, transparent);
   opacity: .45;
 }
 
@@ -271,12 +277,12 @@ button {
   border-radius: 2px;
   background: linear-gradient(
     90deg,
-    #a98279,
-    #d5b2a8,
-    #a98279
+    #8c4652,
+    #d5a4ad,
+    #8c4652
   );
   opacity: .95;
-  box-shadow: 0 0 2px rgba(100, 65, 60, .2);
+  box-shadow: 0 0 2px rgba(100, 45, 55, .2);
 }
 
 .string::before {
@@ -286,7 +292,7 @@ button {
   left: 50%;
   width: 7px;
   height: 7px;
-  border: 1px solid #a98279;
+  border: 1px solid #a34b5e;
   border-radius: 50%;
   background: #f6dce4;
   transform: translateX(-50%);
@@ -300,9 +306,9 @@ button {
   align-items: center;
   gap: 5px;
   padding: 12px 14px 11px;
-  border: 1px solid #e8cbd3;
+  border: 1px solid #e7b9c3;
   border-radius: 3px;
-  background: linear-gradient(145deg, #fffdf9, #fff0f4);
+  background: linear-gradient(145deg, #fffdf9, #fff0f2);
   box-shadow: 2px 5px 12px #815e5e20;
   color: var(--text);
   cursor: pointer;
@@ -316,7 +322,7 @@ button {
   left: 5px;
   right: 5px;
   bottom: 5px;
-  border: 1px solid #f0dce1;
+  border: 1px solid #f0d0d7;
   pointer-events: none;
 }
 
@@ -326,12 +332,12 @@ button {
 }
 
 .card-icon {
-  color: #c87996;
+  color: #bd354f;
   font: 25px "Cormorant Garamond", serif;
 }
 
 .card-label {
-  color: #926b78;
+  color: #852d43;
   font: 500 13px "Cormorant Garamond", serif;
   white-space: nowrap;
 }
@@ -364,12 +370,12 @@ button {
 
 .tree-hint {
   margin: -5px auto 35px;
-  color: #a98b94;
+  color: #a18489;
   font: italic 16px "Cormorant Garamond", serif;
 }
 
 .tree-hint span {
-  color: #d78eaa;
+  color: #bd354f;
 }
 
 
@@ -383,12 +389,12 @@ button {
   align-items: center;
   gap: 9px;
   padding: 25px 15px 45px;
-  color: #b3979f;
+  color: #a18489;
   font: italic 15px "Cormorant Garamond", serif;
 }
 
 .footer-heart {
-  color: #d28aa4;
+  color: #bd354f;
   font-size: 19px;
 }
 
@@ -411,7 +417,7 @@ button {
   width: 11px;
   height: 15px;
   border-radius: 90% 10% 90% 10%;
-  background: linear-gradient(135deg, #ffe8ef, #e9a4bb);
+  background: linear-gradient(135deg, #ffe8ed, #d97890);
   opacity: .65;
   animation: petalFall linear forwards;
 }
@@ -446,7 +452,7 @@ button {
   max-height: min(85vh, 720px);
   overflow-y: auto;
   padding: 42px 34px 35px;
-  border: 1px solid #f1d8e0;
+  border: 1px solid #edc7d0;
   border-radius: 8px;
   background: #fffaf9;
   box-shadow: 0 20px 70px #2e1d2633;
@@ -465,7 +471,7 @@ button {
   right: 17px;
   border: 0;
   background: transparent;
-  color: #a9818c;
+  color: #a34b5e;
   font-size: 29px;
   cursor: pointer;
 }
@@ -473,18 +479,18 @@ button {
 .modal-decoration {
   display: block;
   margin-bottom: 14px;
-  color: #d78ca7;
+  color: #bd354f;
   font-size: 27px;
 }
 
 .modal h2 {
   margin-bottom: 17px;
-  color: #805a67;
+  color: #852d43;
   font: 500 37px/1 "Cormorant Garamond", serif;
 }
 
 .modal p {
-  color: #8c747c;
+  color: #80676e;
   font: 16px/1.8 "Cormorant Garamond", serif;
 }
 
@@ -506,7 +512,7 @@ button {
 }
 
 .music-note {
-  color: #d38ca6;
+  color: #bd354f;
   font-size: 40px;
 }
 
@@ -518,8 +524,8 @@ button {
   height: 90px;
   margin: 15px auto;
   border-radius: 18px;
-  background: linear-gradient(135deg, #f6b8cb, #e987a9, #bd547d);
-  box-shadow: 0 8px 25px rgba(189, 84, 125, 0.2);
+  background: linear-gradient(135deg, #d8798d, #bd354f, #85263d);
+  box-shadow: 0 8px 25px rgba(133, 38, 61, 0.2);
 }
 
 .spotify-cover .music-note {
@@ -529,7 +535,7 @@ button {
 
 .music-player h3 {
   margin: 5px 0 0;
-  color: #a84f72;
+  color: #922d43;
   font: 600 23px "Cormorant Garamond", serif;
 }
 
@@ -567,13 +573,13 @@ button {
 }
 
 .spotify-button:focus-visible {
-  outline: 3px solid #a84f72;
+  outline: 3px solid #a32e48;
   outline-offset: 4px;
 }
 
 .music-player small {
   display: block;
-  color: #ad8795;
+  color: #a16b78;
   font: italic 13px "Cormorant Garamond", serif;
   margin-top: 5px;
 }
@@ -592,7 +598,7 @@ button {
 
 .gallery figure {
   overflow: hidden;
-  border: 1px solid #efdce1;
+  border: 1px solid #e8c3cc;
   padding: 6px;
   background: white;
 }
@@ -612,7 +618,7 @@ button {
 
 .gallery figcaption {
   padding: 7px 3px 3px;
-  color: #997985;
+  color: #925968;
   font: italic 14px "Cormorant Garamond", serif;
 }
 
@@ -630,7 +636,7 @@ button {
 
 .video-heading {
   margin-bottom: 14px;
-  color: #805a67;
+  color: #852d43;
   font: 500 21px "Cormorant Garamond", serif;
 }
 
@@ -643,12 +649,12 @@ button {
   border: 5px solid #fff;
   border-radius: 12px;
   background: #000;
-  box-shadow: 0 5px 20px rgba(120, 75, 90, .15);
+  box-shadow: 0 5px 20px rgba(120, 45, 65, .15);
 }
 
 .video-caption {
   margin-top: 12px;
-  color: #a58b92;
+  color: #a18489;
   font: italic 14px "Cormorant Garamond", serif;
 }
 
@@ -917,21 +923,9 @@ button {
     font-size: 11px;
   }
 
-  /*
-     Fios menores para manter a impressão
-     de que as cartinhas estão penduradas
-     nos galhos da árvore.
-  */
-
   .string {
     height: 27px;
   }
-
-  /*
-     Distribuição alternada:
-     cada cartinha fica em uma altura
-     diferente e em um lado da árvore.
-  */
 
   .card-message {
     top: 19%;
